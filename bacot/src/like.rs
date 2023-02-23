@@ -25,7 +25,7 @@ impl Like {
 }
 
 /// list last 50 likes from a tweet `/tweets/{id}/likes`
-#[get("/tweets/{id}/likes")]
+#[get("/bacots/{id}/likes")]
 pub async fn list(path: Path<(String,)>) -> HttpResponse {
     // TODO find likes by tweet ID and return them
     let likes = Likes { results: vec![] };
@@ -36,7 +36,7 @@ pub async fn list(path: Path<(String,)>) -> HttpResponse {
 }
 
 /// add one like to a tweet `/tweets/{id}/likes`
-#[post("/tweets/{id}/likes")]
+#[post("/bacots/{id}/likes")]
 pub async fn plus_one(path: Path<(String,)>) -> HttpResponse {
     // TODO add one like to a tweet
     let like = Like::new();
